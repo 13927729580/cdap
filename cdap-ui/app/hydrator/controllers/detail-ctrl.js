@@ -131,11 +131,6 @@ angular.module(PKG.name + '.feature.hydrator')
         return;
       }
 
-      // let latestRunId = latestRun.runid;
-      if (currentRun && currentRun.runid === latestRun.runid && currentRun.status === latestRun.status) {
-        return;
-      }
-
       // When current run id changes reset the metrics in the DAG.
       if (currentRun && currentRun.runid !== latestRun.runid) {
         pipelineMetricsActionCreator.reset();
